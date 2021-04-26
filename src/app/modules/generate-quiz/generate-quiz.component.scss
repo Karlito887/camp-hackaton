@@ -1,0 +1,15 @@
+.wrapper {
+  margin: 80px auto;
+  width: 60vh;
+  background-color: #a1f19a;
+  padding: 30px;
+  border-radius: 10px;
+
+  form{
+    margin: 0 auto;
+  }
+  mat-form-field {
+    margin-right: 30px;
+    width: 100%;
+  }
+}

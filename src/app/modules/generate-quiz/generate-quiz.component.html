@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <form [formGroup]="generateQuizForm">
+    <mat-form-field>
+      <mat-label>Quizz count</mat-label>
+
+      <input type="number" matInput min="1" max="50" name="rateInput" formControlName="questionsCount">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of (categories$ | async)" [value]="category.id">{{ category.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Difficulty</mat-label>
+
+      <mat-select formControlName="difficulty">
+        <mat-option value="easy">Easy</mat-option>
+
+        <mat-option value="medium">Medium</mat-option>
+
+        <mat-option value="hard">Hard</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button (click)="generateQuiz()" [disabled]="!generateQuizForm.valid">Generate</button>
+  </form>
+</div>

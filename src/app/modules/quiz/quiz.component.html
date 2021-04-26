@@ -1,0 +1,14 @@
+<div class="wrapper" *ngIf="(quizzes$ | async) as quizzes">
+  <div class="quiz" *ngFor="let quiz of quizzes; let i = index">
+   <div class="quiz-top">
+    <h3>{{ quiz.question }}</h3>
+
+    <span class="count">{{ i + 1 + ' / ' + quizzes?.length }}</span>
+   </div>
+    <mat-radio-group>
+      <mat-radio-button value="true" (click)="giveAnswer(quiz, 'True', quizzes.length === i + 1)">True</mat-radio-button>
+
+      <mat-radio-button value="false" (click)="giveAnswer(quiz, 'False', quizzes.length === i + 1)">>False</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
